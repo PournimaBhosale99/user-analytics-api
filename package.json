@@ -6,10 +6,12 @@
   "scripts": {
   "dev": "nodemon src/server.js",
   "start": "node src/server.js",
-  "migrate:create": "node -r dotenv/config ./node_modules/node-pg-migrate/bin/node-pg-migrate create",
-  "migrate:up": "node -r dotenv/config ./node_modules/node-pg-migrate/bin/node-pg-migrate up",
-  "migrate:down": "node -r dotenv/config ./node_modules/node-pg-migrate/bin/node-pg-migrate down"
+
+  "migrate:create": "node ./node_modules/node-pg-migrate/bin/node-pg-migrate create --envPath .env",
+  "migrate:up": "node ./node_modules/node-pg-migrate/bin/node-pg-migrate up --envPath .env",
+  "migrate:down": "node ./node_modules/node-pg-migrate/bin/node-pg-migrate down --envPath .env"
 },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PournimaBhosale99/user-analytics-api.git"
