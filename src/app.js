@@ -5,6 +5,8 @@ const rateLimit = require("express-rate-limit");
 
 const logger = require("./utils/logger");
 const healthRoutes = require("./routes/health.routes");
+const authRoutes = require("./routes/auth.routes");
+const meRoutes = require("./routes/me.routes");
 
 const app = express();
 
@@ -55,6 +57,8 @@ app.use((req, res, next) => {
  * Routes
  */
 app.use("/", healthRoutes);
+app.use("/", authRoutes);
+app.use("/", meRoutes);
 
 /**
  * 404 handler
